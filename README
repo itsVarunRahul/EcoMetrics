@@ -1,0 +1,9 @@
+save all the files in a file 
+
+index.html,index.css,script.js 
+
+open folder in vs code (ctrl+k+O and then select the folder )
+
+if you dont have extension called "Live server" install it in vs code by clicking on extensions by searching for the same and then enable it
+
+after this you can now right click and select open  with live server to run the website and view its functionalities

@@ -1,0 +1,95 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input-group input {
+    width: calc(100% - 120px);
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.input-group button {
+    padding: 10px 15px;
+    border: none;
+    background-color: #3498db;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.input-group button:hover {
+    background-color: #2980b9;
+}
+
+.output {
+    margin-top: 20px;
+}
+
+.result {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.result th, .result td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.result tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.result tr:hover {
+    background-color: #f1f1f1;
+}
+
+.cp-spinner {
+    border: 4px solid #f3f3f3; /* Light gray */
+    border-top: 4px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.ui.negative.message {
+    background-color: #f44336; /* Red */
+    color: white;
+    padding: 10px;
+    border-radius: 4px;
+}
