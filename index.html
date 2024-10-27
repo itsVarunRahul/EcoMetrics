@@ -1,11 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Air Quality Search</title>
     <link rel="stylesheet" href="index.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .output {
+            display: flex;
+            margin-top: 20px;
+        }
+
+        #outputId, #stationInfoId {
+            flex: 1;
+            margin-right: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #stationInfoId {
+            margin-right: 0;
+        }
+
+        h2 {
+            margin: 0 0 10px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -17,7 +66,15 @@
             <button id="searchButton">Search</button>
         </div>
 
-        <div id="outputId" class="output"></div>
+        <div class="output">
+            <canvas id="pm25Chart" width="400" height="200"></canvas>
+            <canvas id="pm10Chart" width="400" height="200"></canvas>
+            <canvas id="o3Chart" width="400" height="200"></canvas>
+            <canvas id="uviChart" width="400" height="200"></canvas>
+            <div id="outputId"></div>
+            <div id="stationInfoId"></div>
+        </div>
+
     </div>
 
     <script src="script.js"></script>
