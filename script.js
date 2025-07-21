@@ -297,7 +297,7 @@ function init(inputId, outputId) {
     });
 }
 
-const token = "53eb6a4f6d599e4356eba3b58a23a4e4da02000d"; // Replace with your actual API token
+const token = "aqi-token-in-ecoMetrics-777"; // Replace with your actual API token
 
 function search(keyword, output) {
     var info = token === "demo" ? "(based on demo token)" : "";
