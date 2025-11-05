@@ -1,9 +1,120 @@
-save all the files in a folder
+<!-- Inline SVG banner with dark charcoal background and #ff4500 accent -->
+<div align="center">
+  <svg width="100%" height="140" viewBox="0 0 1200 140" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="AirLens banner">
+    <rect width="100%" height="100%" fill="#222428"/>
+    <g transform="translate(40,20)">
+      <rect x="0" y="0" rx="8" ry="8" width="1120" height="100" fill="#2b2f31"/>
+      <text x="40" y="56" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="40" fill="#ffffff" font-weight="700">AirLens</text>
+      <text x="260" y="56" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="18" fill="#cfcfcf">— Real-time air quality (AQI) dashboard with a sleek dark theme</text>
+      <rect x="40" y="72" width="8" height="8" fill="#ff4500" rx="2" ry="2"/>
+      <text x="60" y="80" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="12" fill="#d7d7d7">Dark theme · Accent: #ff4500 · Charcoal & white shades</text>
+    </g>
+  </svg>
+</div>
 
-index.html,index.css,script.js 
+<p align="center">
+  <img alt="Theme Badge" src="https://img.shields.io/badge/Theme-Dark%20%7C%20%23ff4500-%23222222?style=for-the-badge&logoColor=white" />
+  <img alt="WAQI" src="https://img.shields.io/badge/API-WAQI-%23ff4500?style=for-the-badge&logo=data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20'><rect width='20' height='20' fill='%23ff4500'/></svg>" />
+</p>
 
-open folder in vs code (ctrl+k+O and then select the folder )
+---
 
-if you dont have extension called "Live server" install it in vs code by clicking on extensions by searching for the same and then enable it
+A lightweight, single-page Air Quality Index (AQI) dashboard created with HTML, CSS and JavaScript. It uses the World Air Quality Index (WAQI) API for real-time data and ships with a dark, developer-friendly theme (charcoal background, white/gray text, and #ff4500 accent).
 
-after this you can now right click and select open  with live server to run the website and view its functionalities
+This repo includes:
+- index.html — the app UI
+- index.css — dark theme styles with #ff4500 accent
+- script.js — the minimal JavaScript to fetch and display AQI using WAQI API
+- README.md — (this file) usage & setup instructions
+
+Preview
+-------
+The UI is minimal, optimized for clarity on dark backgrounds:
+- Search for a city (e.g., "Delhi", "Los Angeles", "Shanghai") to fetch AQI and main pollutant
+- Option to clear results and try another location
+- Responsive layout for small screens
+
+Quick Start
+-----------
+1. Clone or download this repository and open the folder in VS Code:
+   - In VS Code press Ctrl+K then O (Ctrl+K, O) and select the project folder.
+
+2. Obtain a WAQI API token:
+   - Get your token at: https://aqicn.org/data-platform/token/
+   - Read API usage details at: https://aqicn.org/api/
+
+3. Insert your token:
+   - Open script.js and replace the value of the API_KEY constant with your token:
+     const API_KEY = "YOUR_TOKEN_HERE";
+   - Do not commit your token to a public repository. Use environment variables or secrets for production.
+
+4. Install the Live Server extension (if not already installed):
+   - In VS Code, open Extensions, search for "Live Server" by Ritwick Dey and install it.
+   - Or visit: https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer
+
+5. Run the app:
+   - Right-click index.html in VS Code and choose "Open with Live Server".
+   - Or use Live Server's "Go Live" button in the status bar.
+
+File Structure
+--------------
+- index.html — root HTML file for the single page app
+- index.css — styling (dark theme, variables for easy customization)
+- script.js — fetches data from WAQI and updates the UI
+
+Theme & Styling Notes
+---------------------
+- Dark base: charcoal (#222428 / #2b2f31)
+- Accent: #ff4500
+- Primary text: near-white for contrast
+- Subtle gray scales for secondary text
+- CSS variables are used in index.css so you can change the palette easily:
+  --bg, --card-bg, --accent, --text, --muted, etc.
+
+WAQI API Quick Reference
+------------------------
+- Feed by city:
+  GET https://api.waqi.info/feed/{city}/?token={token}
+  Example: https://api.waqi.info/feed/delhi/?token=YOUR_TOKEN
+- Responses include fields like aqi, idx, dominentpol, time, iaqi.{pm25,o3,...}
+
+Important: WAQI API policies
+- Respect usage limits and attribution requirements. See the WAQI API docs: https://aqicn.org/api/
+- Attribution: Follow WAQI's attribution requirements if you publish the data publicly.
+
+Security & Privacy
+------------------
+- Do not commit your API token to a public repo.
+- For sharing the project publicly, remove the token from script.js and instruct users to supply their own token.
+- Consider using a server-side proxy or environment variables to keep tokens secret.
+
+Customization & Tips
+--------------------
+- Change the accent color by editing --accent in index.css.
+- Add more metrics (PM2.5 history, pollutant breakdown) by querying the API response's iaqi object.
+- Add geolocation support: use navigator.geolocation to obtain coordinates and call the WAQI feed by geo: https://api.waqi.info/feed/geo:{lat};{lon}/?token={token}
+
+Troubleshooting
+---------------
+- If you see CORS or 403 errors: ensure your token is valid and you are using the correct endpoint.
+- If Live Server doesn't open: check the extension is enabled and reload VS Code.
+- If the API returns an error object, script.js shows a notification in the UI. Check console logs for more details.
+
+Contributing
+------------
+Contributions are welcome — especially:
+- UI polish and accessibility improvements
+- Additional data visualizations (charts, historical trends)
+- Internationalization and localization
+Please open issues/PRs following the project's contribution guidelines (if you add them).
+
+License
+-------
+This project is provided as-is under the MIT license. See LICENSE file (not included by default).
+
+Acknowledgements
+----------------
+- World Air Quality Index Project — data provider: https://aqicn.org/
+- Live Server for quick local development
+
+Enjoy exploring air quality with a clean dark UI. Questions or requests? Open an issue or start a discussion.
